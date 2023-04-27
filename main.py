@@ -7,7 +7,7 @@ from symmetric import (symmetric_key_generation,
                        symmetric_decryption, symmetric_encryption)
 from write_functions import (byte_write_text, write_private_key)
 
-SETTINGS_FILE = "settings.json"
+SETTINGS_FILE = "files/settings.json"
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
