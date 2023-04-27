@@ -24,7 +24,6 @@ def read_settings(settings_file: str) -> dict:
     except OSError as err:
         logging.warning(
             f"Settings was not read from file{settings_file}\n{err}")
-
     return settings
 
 
@@ -40,9 +39,9 @@ def byte_read_text(file_name: str) -> bytes:
     try:
         with open(file_name, "rb") as text_file:
             text = text_file.read()
-        logging.info(f" Text was successfully read from file {file_name}!")
+        logging.info(f"Text was successfully read from file {file_name}!")
     except OSError as err:
-        logging.warning(f" Text was not read from file {file_name}\n{err}!")
+        logging.warning(f"Text was not read from file {file_name}\n{err}!")
     return text
 
 
@@ -60,8 +59,8 @@ def read_private_key(private_pem: str):
         with open(private_pem, "rb") as pem_in:
             private_bytes = pem_in.read()
         private_key = load_pem_private_key(private_bytes, password=None)
-        logging.info(f" Private key successfully loaded from {private_pem}!")
+        logging.info(f"Private key successfully loaded from {private_pem}!")
     except OSError as err:
         logging.warning(
-            f" Private key was not loaded from file {private_pem}\n{err}!")
+            f"Private key was not loaded from file {private_pem}\n{err}!")
     return private_key

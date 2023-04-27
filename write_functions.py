@@ -16,9 +16,9 @@ def byte_write_text(text: bytes, file_name: str) -> None:
     try:
         with open(file_name, "wb") as text_file:
             text_file.write(text)
-        logging.info(f" Text was successfully written to file {file_name}!")
+        logging.info(f"Text was successfully written to file {file_name}!")
     except OSError as err:
-        logging.warning(f" Text was not written to file {file_name}\n{err}!")
+        logging.warning(f"Text was not written to file {file_name}\n{err}!")
 
 
 def write_private_key(private_key, private_pem: str) -> None:
@@ -35,7 +35,7 @@ def write_private_key(private_key, private_pem: str) -> None:
             private_out.write(private_key.private_bytes(encoding=serialization.Encoding.PEM,
                                                         format=serialization.PrivateFormat.TraditionalOpenSSL,
                                                         encryption_algorithm=serialization.NoEncryption()))
-        logging.info(f" Private key successfully saved to {private_pem}!")
+        logging.info(f"Private key successfully saved to {private_pem}!")
     except OSError as err:
         logging.warning(
-            f" Private key was not saved to file {private_pem}\n{err}!")
+            f"Private key was not saved to file {private_pem}\n{err}!")
